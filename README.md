@@ -33,7 +33,8 @@ This project implements a simplified version of the **ASCON128** encryption algo
   ![schema_general](https://github.com/user-attachments/assets/a182039f-5c33-4fde-bbb6-1f2f7f201dab)
 
 ### File Structure
-<img src="https://github.com/user-attachments/assets/56f91558-f632-487f-9a9b-69971b00fcd6" width="300px"/>
+<img src="https://github.com/user-attachments/assets/56f91558-f632-487f-9a9b-69971b00fcd6" width="150px"/>
+
 ### Key Modules
 
 1.  **Constant Addition**:
@@ -117,7 +118,8 @@ Ce projet implémente une version simplifiée de l’algorithme de chiffrement *
   ![schema_general](https://github.com/user-attachments/assets/9e40e26a-ef42-4096-8eff-aabec7f8890a)
 
 ### Structure des fichiers
-<img src="https://github.com/user-attachments/assets/56f91558-f632-487f-9a9b-69971b00fcd6" width="300px"/>![arborescence](https://github.com/user-attachments/assets/3e6e8dce-60b6-439b-b99c-b9f6251d761c)
+<img src="https://github.com/user-attachments/assets/56f91558-f632-487f-9a9b-69971b00fcd6" width="150px"/>
+
 ### Modules Clés
 
 1.  **Addition de Constante** :
