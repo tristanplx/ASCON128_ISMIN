@@ -30,7 +30,10 @@ This project implements a simplified version of the **ASCON128** encryption algo
 -   **Associated Data Phase**: XOR the associated data followed by 6 permutations.
 -   **Plaintext Phase**: XOR the plaintext in 64-bit blocks with 6 permutations after each.
 -   **Final Phase**: Obtain the tag by applying 12 permutations followed by XOR with the Key.
+  ![schema_general](https://github.com/user-attachments/assets/a182039f-5c33-4fde-bbb6-1f2f7f201dab)
 
+### File Structure
+![arborescence](https://github.com/user-attachments/assets/56f91558-f632-487f-9a9b-69971b00fcd6)
 ### Key Modules
 
 1.  **Constant Addition**:
@@ -81,7 +84,10 @@ Ce projet implémente une version simplifiée de l’algorithme de chiffrement *
 -   **Phase de Données Associées** : Injection des données associées via XOR et 6 permutations.
 -   **Phase de Texte Clair** : Injection du texte clair en blocs de 64 bits suivie de 6 permutations après chaque bloc.
 -   **Phase Finale** : Récupération du tag avec 12 permutations et un XOR avec la clé.
+  ![schema_general](https://github.com/user-attachments/assets/9e40e26a-ef42-4096-8eff-aabec7f8890a)
 
+### Structure des fichiers
+![arborescence](https://github.com/user-attachments/assets/3e6e8dce-60b6-439b-b99c-b9f6251d761c)
 ### Modules Clés
 
 1.  **Addition de Constante** :
@@ -96,6 +102,9 @@ Ce projet implémente une version simplifiée de l’algorithme de chiffrement *
     
     -   Applique des décalages circulaires et des opérations XOR sur les lignes de 64 bits de l'état.
     -   Implémenté dans `diffusion.sv`.
+
+### Compilation
+
 
 ### Points d'Amélioration
 
