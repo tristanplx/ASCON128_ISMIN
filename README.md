@@ -33,7 +33,7 @@ This project implements a simplified version of the **ASCON128** encryption algo
   ![schema_general](https://github.com/user-attachments/assets/a182039f-5c33-4fde-bbb6-1f2f7f201dab)
 
 ### File Structure
-![arborescence](https://github.com/user-attachments/assets/56f91558-f632-487f-9a9b-69971b00fcd6)
+<img src="https://github.com/user-attachments/assets/56f91558-f632-487f-9a9b-69971b00fcd6" width="300px"/>
 ### Key Modules
 
 1.  **Constant Addition**:
@@ -45,7 +45,37 @@ This project implements a simplified version of the **ASCON128** encryption algo
 3.  **Linear Diffusion**:
     -   Applies circular shifts and XOR operations on the 64-bit lines of the state.
     -   Implemented in `diffusion.sv`.
+    -   
+### Compilation Procedure (Linux with ModelSim)
 
+1.  **Ensure ModelSim is installed**:
+    
+    -   If not, follow the installation instructions for **ModelSim** on your Linux environment.
+2.  **Edit the `compile_src.txt` file**:
+    
+    -   Locate the `compile_src.txt` file in the root directory of your project.
+    -   Open it in a text editor (e.g., `nano`, `vim`, or `gedit`).
+        
+    -   Uncomment the line corresponding to the desired simulation by removing the `#` at the beginning of the line. This enables the correct source files for your simulation.
+3.  **Run the compilation**:
+    
+    -   Navigate to the root directory of your project
+        
+    -   Run the following command to source the `compile_src.txt` script:
+        
+        ```sh
+        source compile_src.txt
+        ```
+4.  **Launch ModelSim**:
+    
+    -   After running the script, **ModelSim** will automatically launch.
+5.  **Start the simulation**:
+    
+    -   In ModelSim, use the GUI to run the simulation you have set up.
+    -   Go to the `Wave` tab and display the desired signals by adding them to the wave viewer.
+6.  **Analyze the results**:
+    
+    -   View the signal outputs in the **Wave** window to verify the simulation behavior of your ASCON modules.
 ### Areas for Improvement
 
 While each module (Constant Addition, Substitution, and Linear Diffusion) functions correctly based on individual testing and verification, the **Top Level** implementation is still missing some key components for complete functionality:
@@ -87,7 +117,7 @@ Ce projet implémente une version simplifiée de l’algorithme de chiffrement *
   ![schema_general](https://github.com/user-attachments/assets/9e40e26a-ef42-4096-8eff-aabec7f8890a)
 
 ### Structure des fichiers
-![arborescence](https://github.com/user-attachments/assets/3e6e8dce-60b6-439b-b99c-b9f6251d761c)
+<img src="https://github.com/user-attachments/assets/56f91558-f632-487f-9a9b-69971b00fcd6" width="300px"/>![arborescence](https://github.com/user-attachments/assets/3e6e8dce-60b6-439b-b99c-b9f6251d761c)
 ### Modules Clés
 
 1.  **Addition de Constante** :
@@ -103,7 +133,40 @@ Ce projet implémente une version simplifiée de l’algorithme de chiffrement *
     -   Applique des décalages circulaires et des opérations XOR sur les lignes de 64 bits de l'état.
     -   Implémenté dans `diffusion.sv`.
 
-### Compilation
+
+### Procédure de Compilation (Linux avec ModelSim)
+
+1.  **Assurez-vous que ModelSim est installé** :
+    
+    -   Si ce n'est pas le cas, suivez les instructions d'installation de **ModelSim** sur votre environnement Linux.
+2.  **Éditez le fichier `compile_src.txt`** :
+    
+    -   Localisez le fichier `compile_src.txt` dans le répertoire racine de votre projet.
+        
+    -   Ouvrez-le dans un éditeur de texte (par exemple, `nano`, `vim`, ou `gedit`).
+        
+    -   Décommentez la ligne correspondant à la simulation souhaitée en supprimant le `#` au début de la ligne. Cela permet d'activer les fichiers sources corrects pour votre simulation.
+        
+3.  **Lancez la compilation** :
+    
+    -   Placez-vous dans le répertoire racine de votre projet.
+        
+    -   Exécutez la commande suivante pour lancer le script `compile_src.txt` :
+        
+        ```sh  
+        source compile_src.txt
+        ```
+        
+4.  **Démarrez ModelSim** :
+    
+    -   Après avoir exécuté le script, **ModelSim** se lancera automatiquement.
+5.  **Lancez la simulation** :
+    
+    -   Dans ModelSim, utilisez l'interface graphique pour lancer la simulation que vous avez configurée.
+    -   Accédez à l'onglet `Wave` et affichez les signaux souhaités en les ajoutant dans la vue des ondes.
+6.  **Analysez les résultats** :
+    
+    -   Visualisez les signaux de sortie dans la fenêtre **Wave** pour vérifier le comportement de simulation de vos modules ASCON.
 
 
 ### Points d'Amélioration
