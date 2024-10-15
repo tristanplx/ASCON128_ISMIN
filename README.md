@@ -6,7 +6,7 @@
 
 <a name="english-version"></a>
 
-## English Version
+English Version
 
 ### Project Overview
 
@@ -45,8 +45,7 @@ This project implements a simplified version of the **ASCON128** encryption algo
     -   Implemented in `substitution.sv`.
 3.  **Linear Diffusion**:
     -   Applies circular shifts and XOR operations on the 64-bit lines of the state.
-    -   Implemented in `diffusion.sv`.
-    -   
+    -   Implemented in `diffusion.sv`.  
 ### Compilation Procedure (Linux with ModelSim)
 
 1.  **Ensure ModelSim is installed**:
@@ -87,11 +86,15 @@ While each module (Constant Addition, Substitution, and Linear Diffusion) functi
 
 These points highlight the improvements needed for a complete and functional ASCON encryption processor.
 
+
+#### Note
+Some of the modules were implemented by my professor as part of the course. These modules are marked with a specific header in the source code to distinguish them.
+
 ----------
 
 <a name="version-française"></a>
 
-## Version Française
+Version Française
 
 ### Aperçu du Projet
 
@@ -180,6 +183,9 @@ Bien que chaque module (Addition de Constante, Substitution, Diffusion Linéaire
 -   **Testbenches** : Bien que les testbenches des modules individuels fonctionnent, un testbench global pour l’ensemble du système ASCON reste à développer.
 
 Ces points mettent en avant les améliorations nécessaires pour un processeur ASCON complet et fonctionnel.
+
+#### Remarque
+Certains modules ont été implémentés par mon professeur dans le cadre du cours. Ces modules sont marqués d'une en-tête spécifique dans le code source pour les distinguer.
 
 ----------
 
