@@ -1,0 +1,49 @@
+#!/bin/bash
+
+export PROJECTNAME="."
+
+
+# Remove existing librairies
+vdel -lib LIB_RTL -all
+vdel -lib LIB_BENCH -all
+
+# Build librairies
+vlib LIB/LIB_RTL
+vmap LIB_RTL LIB/LIB_RTL
+vlib LIB/LIB_BENCH
+vmap LIB_BENCH LIB/LIB_BENCH
+
+# Define compilation options	
+VLOG_OPTS="-sv +acc -svinputport=net"
+
+# Compilation des fichiers RTL
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/ascon_pack.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/add_constant.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/sbox.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/substitution.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/diffusion.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/permutation_finale.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/mux_state.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/register_w_en.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/state_register_w_en.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/xor_begin_perm.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/xor_end_perm.sv
+vlog $VLOG_OPTS -work LIB_RTL ./SRC/RTL/compteur_double_init.sv
+
+# Compilation des BENCH
+vlog $VLOG_OPTS -work LIB_BENCH -L LIB_RTL SRC/BENCH/add_constant_tb.sv
+vlog $VLOG_OPTS -work LIB_BENCH -L LIB_RTL SRC/BENCH/sbox_tb.sv
+vlog $VLOG_OPTS -work LIB_BENCH -L LIB_RTL SRC/BENCH/substitution_tb.sv
+vlog $VLOG_OPTS -work LIB_BENCH -L LIB_RTL SRC/BENCH/diffusion_tb.sv
+vlog $VLOG_OPTS -work LIB_BENCH -L LIB_RTL SRC/BENCH/permutation_finale_tb.sv
+vlog $VLOG_OPTS -work LIB_BENCH -L LIB_RTL SRC/BENCH/perm_f_count_tb.sv
+
+# Simulation
+# décommenter une seule ligne qui sera la ligne simulée
+#vsim -L LIB_RTL LIB_BENCH.add_constant_tb
+#vsim -L LIB_RTL LIB_BENCH.sbox_tb
+#vsim -L LIB_RTL LIB_BENCH.substitution_tb
+#vsim -L LIB_RTL LIB_BENCH.diffusion_tb
+vsim -L LIB_RTL LIB_BENCH.permutation_finale_tb
+#vsim -L LIB_RTL LIB_BENCH.perm_f_count_tb
+
